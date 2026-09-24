@@ -1,17 +1,32 @@
 /* Global stylesheet
-   CSS variables (colour palette, typography scale) go in issue #2.
+   CSS variables (colour palette, typography scale) confirmed here in issue #2.
    Button and card component styles go in issue #3.
    Keep this file the single source of truth for colours and spacing,
    pages should not hardcode their own values. */
 
 :root {
-  /* placeholder, real dark green palette confirmed in issue #2 */
-  --color-primary: #1f4d36;
+  --accent: #214721;
+  --highlight: #6E3C32;
+  --bg: #F3F1E9;
+  --bg-alt: #ECEAE0;
+  --card: #EDEBE0;
+  --text: #21301F;
+  --text-soft: #4A5245;
+  --line: #A6A490;
+
+  --font-heading: "EB Garamond", serif;
+  --font-body: "Be Vietnam Pro", sans-serif;
 }
 
 body {
   margin: 0;
-  font-family: system-ui, sans-serif;
+  font-family: var(--font-body);
+  color: var(--text);
+  background: var(--bg);
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-heading);
 }
 
 /* ---------- nav (issue #1) ---------- */
@@ -19,16 +34,16 @@ header.nav {
   position: sticky; top: 0; z-index: 50;
   display: flex; align-items: center; justify-content: space-between;
   padding: 16px 32px; background: #fff;
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid var(--line);
   gap: 16px; flex-wrap: wrap;
 }
-.wordmark { font-size: 22px; font-weight: 700; color: var(--color-primary); }
+.wordmark { font-family: var(--font-heading); font-size: 22px; font-weight: 700; color: var(--accent); }
 nav.links { display: flex; align-items: center; gap: 26px; font-size: 13px; flex-wrap: wrap; }
-nav.links a.navlink { color: var(--color-primary); }
-.phone-pill { background: var(--color-primary); color: #fff; padding: 10px 20px; border-radius: 999px; font-weight: 500; font-size: 13px; white-space: nowrap; }
+nav.links a.navlink { color: var(--accent); }
+.phone-pill { background: var(--accent); color: #fff; padding: 10px 20px; border-radius: 999px; font-weight: 500; font-size: 13px; white-space: nowrap; }
 
 /* ---------- footer (issue #1) ---------- */
-footer.site { background: var(--color-primary); padding: 40px 32px; color: #fff; }
+footer.site { background: var(--accent); padding: 40px 32px; color: #fff; }
 .footer-grid { max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; gap: 36px; flex-wrap: wrap; }
 .foot-brand { display: flex; flex-direction: column; gap: 10px; max-width: 300px; }
 .foot-cols { display: flex; gap: 56px; flex-wrap: wrap; }

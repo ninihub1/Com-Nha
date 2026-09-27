@@ -1,0 +1,429 @@
+{
+  "categories": [
+    {
+      "id": "smalls",
+      "name": "Smalls",
+      "items": [
+        {
+          "name": "Chả Giò",
+          "english": "Grandma's Spring Rolls",
+          "description": "3 pieces, your choice of filling: veggies / pork & prawn / mixed seafood.",
+          "price": "11 / 11 / 12",
+          "vegetarian": true
+        },
+        {
+          "name": "Bò Lá Lốt",
+          "english": "Grilled Betel Beef (seasonal)",
+          "description": "3 pieces of homemade Vietnamese betel leaf-wrapped beef rolls, served with bánh hỏi.",
+          "price": "15"
+        },
+        {
+          "name": "Chạo Tôm",
+          "english": "Sugarcane Prawns",
+          "description": "3 pieces of homemade Vietnamese shrimp cakes on sugarcane sticks, served with bánh hỏi.",
+          "price": "12"
+        },
+        {
+          "name": "Gỏi Cuốn",
+          "english": "Fresh Summer Rolls",
+          "description": "2 pieces, your choice of pork & prawns / Vietnamese grilled pork sausage / veggies and tofu.",
+          "price": "12",
+          "vegetarian": true
+        },
+        {
+          "name": "Tôm Chiên Xù",
+          "english": "Golden Crunch Prawn",
+          "description": "3 deep-fried tiger prawns coated in breadcrumbs.",
+          "price": "12"
+        },
+        {
+          "name": "Gỏi Gà",
+          "english": "Vietnamese Chicken Salad",
+          "description": "Shredded chicken, onion, green cabbage, fresh chilli, traditional herbs, crushed peanut, fried shallot.",
+          "price": "15"
+        },
+        {
+          "name": "Gỏi Miến Hải Sản",
+          "english": "Glass Noodle Salad with Seafood",
+          "description": "Glass noodle, prawn, cuttlefish, celery, fresh chilli, traditional herbs, crushed peanut, fried shallot.",
+          "price": "19"
+        },
+        {
+          "name": "Bánh Phồng Tôm",
+          "english": "Prawn Cracker",
+          "description": "",
+          "price": "5"
+        }
+      ]
+    },
+    {
+      "id": "sharing",
+      "name": "Sharing",
+      "items": [
+        {
+          "name": "Tôm Hột Vịt Muối",
+          "english": "Prawn Fritter with Salted Egg",
+          "description": "Deep-fried local tiger prawns shaken with salted egg yolks.",
+          "price": "47"
+        },
+        {
+          "name": "Tôm Rang Muối",
+          "english": "Prawns Tossed in Salt & Aromatics",
+          "description": "Local tiger prawns deep-fried and wok-tossed with salt and fragrant aromatics.",
+          "price": "37"
+        },
+        {
+          "name": "Bánh Xèo",
+          "english": "Vietnamese Traditional Pancake",
+          "description": "A crispy pancake filled with your choice of pork & prawn / veggie, mung bean, beansprout and green onion.",
+          "price": "25",
+          "vegetarian": true
+        },
+        {
+          "name": "Bò Lúc Lắc",
+          "english": "Shaking Diced Beef",
+          "description": "Tender cubes of marinated beef stir-fried with mixed veggies in a signature glaze.",
+          "price": "29"
+        },
+        {
+          "name": "Hải Sản Nướng Giấy Bạc",
+          "english": "Seafood Treasure Wrap",
+          "description": "Squid and local tiger prawns baked in foil with silky egg tofu, mixed vegetables and a savoury soy-based glaze.",
+          "price": "30"
+        }
+      ]
+    },
+    {
+      "id": "signatures",
+      "name": "Signatures",
+      "items": [
+        {
+          "name": "Nem Nướng Cơm Nhà",
+          "english": "Cơm Nhà's Style Grilled Pork Sausages",
+          "description": "Inspired by a cherished three-generation family recipe. Roll-your-own grilled pork sausages with fresh salad, herbs, bánh hỏi, rice paper, pickles, fragrant scallion oil and peanuts, served with our homemade hoisin sauce.",
+          "price": "35"
+        },
+        {
+          "name": "Mẹt Cuốn",
+          "english": "Assorted Platter Delight",
+          "description": "A roll-your-own rice paper tray inspired by a cherished three-generation family recipe: grilled pork sausages, seasonal grilled betel leaves, sugarcane prawns and spring rolls. Served with fresh salad, herbs, pickles, bánh hỏi, scallion oil, peanuts and three homemade sauces.",
+          "price": "52"
+        },
+        {
+          "name": "Gà Nướng Muối Ớt Lá Chanh",
+          "english": "Flame-Kissed Chicken",
+          "description": "A modern touch on Vietnamese tradition: grilled chicken thigh marinated in chilli and herbs, finished with a tangy tamarind sauce. Perfect alongside our fried rice.",
+          "price": "30"
+        },
+        {
+          "name": "Sườn Nướng",
+          "english": "Smoky Legacy Ribs",
+          "description": "Tender, savoury grilled pork ribs in a house-made marinade, served with tangy tamarind sauce and fresh salad. Perfect alongside our fried rice.",
+          "price": "35"
+        },
+        {
+          "name": "Cá Chẽm Hấp Hành Gừng",
+          "english": "Steamed Barramundi Fish",
+          "description": "Steamed whole barramundi with ginger, scallions, herbs, black fungus, carrots and glass noodles in a delicate soy sauce. A premium centrepiece for sharing.",
+          "price": "49"
+        }
+      ]
+    },
+    {
+      "id": "noodles",
+      "name": "Noodles",
+      "items": [
+        {
+          "name": "Hủ Tiếu / Mì Thập Cẩm",
+          "english": "Mekong Noodles Soup",
+          "description": "Dry or soup style, with egg or clear rice noodle, prawn, cuttlefish, quail egg, minced pork and pork kidney.",
+          "price": "19"
+        },
+        {
+          "name": "Mì Xào",
+          "english": "Stir-fried Egg Noodles",
+          "description": "Choy sum, carrot and bean sprouts, with your choice of seafood / beef / chicken / veggies.",
+          "price": "21 / 19 / 19",
+          "vegetarian": true
+        },
+        {
+          "name": "Mì Sủi Cảo",
+          "english": "Egg Noodles & Dumpling Soup",
+          "description": "Egg noodle, dumpling, prawn, cuttlefish, pork mince.",
+          "price": "21"
+        },
+        {
+          "name": "Bún Bò Huế",
+          "english": "Spicy Beef Noodles Soup",
+          "description": "Served with beef shin, chả ốc, beef tendon and beef brisket.",
+          "price": "19"
+        },
+        {
+          "name": "Bún Thịt Nướng Truyền Thống",
+          "english": "Classic Vermicelli Salad",
+          "description": "Grilled pork, spring roll.",
+          "price": "19"
+        },
+        {
+          "name": "Bún Thịt Nướng Special",
+          "english": "Special Vermicelli Salad",
+          "description": "Grilled pork, shredded pork skin, spring roll, Vietnamese grilled pork sausages.",
+          "price": "20"
+        },
+        {
+          "name": "Phở Trộn",
+          "english": "Dry Mixed Pho",
+          "description": "Pho tossed with seared beef, pickles, celery, herbs, bean sprouts and peanut in a savoury sauce.",
+          "price": "19"
+        },
+        {
+          "name": "Phở Truyền Thống",
+          "english": "Classic Pho",
+          "description": "Raw beef noodle soup.",
+          "price": "19"
+        },
+        {
+          "name": "Phở Thập Cẩm",
+          "english": "Combi Pho",
+          "description": "Raw beef, beef brisket, beef ball and beef tendon.",
+          "price": "21"
+        },
+        {
+          "name": "Phở Sườn Bò",
+          "english": "Beef Rib Pho",
+          "description": "",
+          "price": "27"
+        },
+        {
+          "name": "Phở Đặc Biệt",
+          "english": "Special Pho",
+          "description": "Raw beef, beef brisket, beef ball, beef tendon and beef rib.",
+          "price": "32"
+        },
+        {
+          "name": "Baby Spaghetti",
+          "english": "Cơm Nhà's Style",
+          "description": "",
+          "price": "12"
+        },
+        {
+          "name": "Baby Phở",
+          "english": "",
+          "description": "Served with raw beef or beef balls.",
+          "price": "12"
+        }
+      ]
+    },
+    {
+      "id": "rice",
+      "name": "Rice Dishes",
+      "items": [
+        {
+          "name": "Cơm Gà Nướng",
+          "english": "Grilled Chicken with Rice",
+          "description": "Cơm Nhà's signature flame-kissed chicken served with rice, fresh salad and tamarind sauce.",
+          "price": "21"
+        },
+        {
+          "name": "Cơm Tấm",
+          "english": "Broken Rice Harmony",
+          "description": "Pork chops, shredded pork, meat loaf and runny egg, served with broken rice and nước mắm.",
+          "price": "25"
+        },
+        {
+          "name": "Cơm Chiên Cá Mặn",
+          "english": "Salted-Fish Fried Rice",
+          "description": "Wok-tossed rice with salted fish flakes and a choice of seafood / chicken.",
+          "price": "22 / 19"
+        },
+        {
+          "name": "Cơm Chiên Ngũ Sắc",
+          "english": "Five-Colour Fried Rice",
+          "description": "Wok-tossed rice with a colourful mix of carrot, corn, seafood, Chinese sausage and peas.",
+          "price": "25"
+        },
+        {
+          "name": "Cơm Chiên Bò Lúc Lắc",
+          "english": "Shaking Beef with Fried Rice",
+          "description": "Viet-style shaking beef served with stir-fried rice.",
+          "price": "25"
+        },
+        {
+          "name": "Cơm Chiên Chay",
+          "english": "Veggies & Tofu Fried Rice",
+          "description": "Plant-based fried rice tossed with mixed veggies and tofu.",
+          "price": "20",
+          "vegetarian": true
+        }
+      ]
+    },
+    {
+      "id": "desserts",
+      "name": "Desserts",
+      "items": [
+        {
+          "name": "Sữa Chua Nếp Cẩm",
+          "english": "Homemade Sticky Purple Rice Yogurt",
+          "description": "Sticky purple rice layered with smooth, lightly sweetened yogurt, served chilled.",
+          "price": "7"
+        },
+        {
+          "name": "Panna Cotta",
+          "english": "Cơm Nhà's Style",
+          "description": "Homemade panna cotta topped with your choice of strawberry or passion fruit.",
+          "price": "7"
+        },
+        {
+          "name": "Flan của Út",
+          "english": "Homemade Caramel Custard",
+          "description": "Classic crème caramel with a Vietnamese twist: rich, eggy custard layered with bittersweet caramel.",
+          "price": "7.50"
+        },
+        {
+          "name": "Chè Tĩnh Tâm",
+          "english": "Serenity Dessert",
+          "description": "A light and nourishing sweet soup made with lotus seeds and longan.",
+          "price": "8"
+        },
+        {
+          "name": "Kem Chuối",
+          "english": "Banana Ice Cream",
+          "description": "One scoop of homemade banana ice cream, served with shredded coconut and roasted peanuts.",
+          "price": "7.50"
+        }
+      ]
+    },
+    {
+      "id": "drinks",
+      "name": "Drinks",
+      "items": [
+        {
+          "name": "Jasmine Green Tea",
+          "english": "",
+          "description": "Mug.",
+          "price": "3"
+        },
+        {
+          "name": "Kukicha Organic",
+          "english": "Low in Caffeine",
+          "description": "Mug.",
+          "price": "3"
+        },
+        {
+          "name": "Cà Phê Đen",
+          "english": "Vietnamese Black Coffee",
+          "description": "Vietnamese drip-brewed coffee, hot / chilled.",
+          "price": "6 / 8"
+        },
+        {
+          "name": "Cà Phê Sữa",
+          "english": "Vietnamese White Coffee",
+          "description": "Vietnamese drip coffee with sweetened condensed milk, hot / chilled.",
+          "price": "6 / 8"
+        },
+        {
+          "name": "Cơm Nhà's Coffee",
+          "english": "",
+          "description": "Vietnamese drip white coffee topped with a salted milk foam, hot / chilled.",
+          "price": "7 / 9"
+        },
+        {
+          "name": "Matcha Latte",
+          "english": "",
+          "description": "Hot / chilled.",
+          "price": "7 / 9"
+        },
+        {
+          "name": "Sữa Đậu Nành",
+          "english": "Homemade Soy Milk",
+          "description": "Homemade soy milk topped with grass jelly, hot or chilled.",
+          "price": "6"
+        },
+        {
+          "name": "Soft Drinks",
+          "english": "",
+          "description": "Coke, Coke Zero, Fanta, Sprite.",
+          "price": "4"
+        },
+        {
+          "name": "Yaru Still Mineral Water",
+          "english": "",
+          "description": "",
+          "price": "7"
+        },
+        {
+          "name": "Yaru Sparkling Mineral Water",
+          "english": "",
+          "description": "",
+          "price": "7"
+        }
+      ]
+    },
+    {
+      "id": "juices-mocktails",
+      "name": "Juices & Mocktails",
+      "items": [
+        {
+          "name": "Hakuna Matata",
+          "english": "Cold-Pressed Juice",
+          "description": "Watermelon, apple, strawberry.",
+          "price": "8"
+        },
+        {
+          "name": "Tropical Like It's Hot",
+          "english": "Cold-Pressed Juice",
+          "description": "Mango, passionfruit, orange, pineapple.",
+          "price": "8"
+        },
+        {
+          "name": "Flamingo",
+          "english": "Cold-Pressed Juice",
+          "description": "Granny Smith apple, rock melon, coconut, dragon fruit.",
+          "price": "8"
+        },
+        {
+          "name": "Valencia",
+          "english": "Cold-Pressed Juice",
+          "description": "Orange.",
+          "price": "8"
+        },
+        {
+          "name": "Whole Young Coconut",
+          "english": "",
+          "description": "",
+          "price": "8"
+        },
+        {
+          "name": "Virgin Mojito",
+          "english": "",
+          "description": "Classic (mint & lime), strawberry or passionfruit, with fresh mint, bright lime and sparkling soda.",
+          "price": "12"
+        },
+        {
+          "name": "Arnold Palmer Lemon Iced Tea",
+          "english": "",
+          "description": "Lemonade, sugar syrup and black iced tea, topped with chia seeds.",
+          "price": "12"
+        },
+        {
+          "name": "Lucky Lychee Brew",
+          "english": "",
+          "description": "Sweet lychee and lemon juice with lychee purée and chilled black tea, topped with chia seeds.",
+          "price": "12"
+        },
+        {
+          "name": "Four Seasons Serenity Iced Tea",
+          "english": "",
+          "description": "Black tea, passion fruit and a hint of lemon, garnished with strawberry, orange and mint.",
+          "price": "12"
+        },
+        {
+          "name": "Elixir Spritz",
+          "english": "",
+          "description": "Your choice of strawberry, passion fruit, lychee or blue lagoon, with lemon juice and soda.",
+          "price": "11"
+        }
+      ]
+    }
+  ]
+}

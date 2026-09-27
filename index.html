@@ -20,71 +20,72 @@
     <section id="marquee"></section>
     <section id="story"></section>
     <section id="signatures"></section>
-    <section id="mam-com">  /* ---------- family sets cards (issue #6) ----------
-   Paste at the BOTTOM of css/style.css.
-   Uses the colour variables from :root, no hardcoded colours. */
+    <section id="mam-com"> 
+          <section id="mam-com">
+      <div class="set-grid">
 
-.set-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 20px;
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 0 32px;
-}
+        <article class="set-card">
+          <h3>Mâm Cơm Sum Vầy</h3>
+          <p class="set-en">Gathering Meal Set</p>
+          <p class="set-meta">Serves up to 2 · $60</p>
+          <ul>
+            <li>Bì Cuốn – Shredded pork skin wrapped in rice paper</li>
+            <li>Thịt Kho Tiêu – Vietnamese braised peppered pork belly</li>
+            <li>Canh Khổ Qua Dồn Thịt – Stuffed bitter melon soup</li>
+            <li>Rau Luộc – Boiled seasonal veggies</li>
+            <li>Rau Sống – Fresh salad</li>
+            <li>Cơm Trắng – Steamed rice</li>
+            <li>Dessert: Bánh Flan – Caramel custard</li>
+          </ul>
+        </article>
 
-.set-card {
-  background: var(--card);
-  border: 1px solid var(--line);
-  border-radius: 8px;
-  padding: 24px;
-  display: flex;
-  flex-direction: column;
-}
+        <article class="set-card">
+          <h3>Mâm Cơm Ba Thích</h3>
+          <p class="set-en">Dad's Craving Platter</p>
+          <p class="set-meta">Serves up to 2 · $65</p>
+          <ul>
+            <li>Bắp Xào Tôm Bơ – Stir-fried glutinous corn with crispy baby shrimp</li>
+            <li>Cá Kho Tiêu – Vietnamese braised catfish with black pepper</li>
+            <li>Canh Chua Rau Cải – Sweet &amp; sour veggie soup</li>
+            <li>Rau Luộc – Boiled seasonal veggies</li>
+            <li>Ba Rọi Luộc &amp; Mắm Nêm – Boiled pork belly with fermented anchovy dipping sauce</li>
+            <li>Cơm Trắng – Steamed rice</li>
+            <li>Dessert: Kem Chuối – Banana ice cream</li>
+          </ul>
+        </article>
 
-.set-card h3 {
-  color: var(--accent);
-  font-size: 24px;
-  margin: 0;
-}
+        <article class="set-card">
+          <h3>Dưỡng Tâm An Lạc</h3>
+          <p class="set-en">Inner Peace Nourishment <span class="set-tag">Vegan</span></p>
+          <p class="set-meta">Serves up to 2 · $65</p>
+          <ul>
+            <li>Nấm Đùi Gà Lắc Muối – Salt &amp; pepper king oyster mushroom</li>
+            <li>Đậu Hủ Áp Chảo Sốt Nấm Đông Cô – Pan-fried silk tofu &amp; shiitake sauce</li>
+            <li>Canh Rong Biển – Seaweed soup</li>
+            <li>Rau Luộc – Boiled seasonal veggies</li>
+            <li>Rau Sống – Fresh salad</li>
+            <li>Cơm Trắng – Steamed rice</li>
+            <li>Dessert: Chè Tĩnh Tâm – Lotus seeds &amp; longan sweet soup</li>
+          </ul>
+        </article>
 
-.set-en {
-  font-family: var(--font-heading);
-  font-style: italic;
-  color: var(--text-soft);
-  margin: 2px 0 12px;
-}
+        <article class="set-card">
+          <h3>Mâm Cơm Hội Ngộ</h3>
+          <p class="set-en">The Reunion Platter</p>
+          <p class="set-meta">Serves up to 4 · $125</p>
+          <ul>
+            <li>Gỏi Bò – Beef salad</li>
+            <li>Đậu Hủ Nướng Giấy Bạc – Tofu treasure wrap</li>
+            <li>Sườn Nướng – Grilled pork ribs</li>
+            <li>Cơm Chiên Ngũ Sắc – Five-colour fried rice</li>
+            <li>Canh Gà Collagen – Collagen chicken soup</li>
+            <li>Dessert: Panna cotta or Sữa Chua Nếp Cẩm (sticky purple rice yogurt)</li>
+          </ul>
+        </article>
 
-.set-tag {
-  font-family: var(--font-body);
-  font-style: normal;
-  font-size: 12px;
-  color: var(--accent);
-  border: 1px solid var(--accent);
-  border-radius: 999px;
-  padding: 1px 8px;
-  margin-left: 6px;
-}
-
-.set-meta {
-  color: var(--highlight);
-  font-weight: 600;
-  margin: 0 0 14px;
-  padding-bottom: 12px;
-  border-bottom: 1px solid var(--line);
-}
-
-.set-card ul {
-  margin: 0;
-  padding-left: 18px;
-  color: var(--text-soft);
-  font-size: 14px;
-  line-height: 1.6;
-}
-
-@media (max-width: 600px) {
-  .set-grid { padding: 0 16px; }
-}
+      </div>
+    </section>
+</section>
 </section>
     <section id="catering"></section>
     <section id="visit"></section>

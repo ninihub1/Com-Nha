@@ -1,0 +1,119 @@
+/* ---------- menu page (issue #5) ----------
+   Menu-page-only styles. Uses the colour and font variables from style.css. */
+
+.menu-page {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 48px 32px 64px;
+}
+
+.menu-page h1 {
+  color: var(--accent);
+  font-size: 44px;
+  margin: 0 0 6px;
+}
+
+.menu-key {
+  color: var(--text-soft);
+  font-size: 14px;
+  margin: 0 0 24px;
+}
+
+/* Category nav */
+.menu-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 16px 0;
+  margin-bottom: 36px;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.menu-nav a {
+  color: var(--accent);
+  text-decoration: none;
+  font-size: 14px;
+  padding: 6px 14px;
+  border: 1px solid var(--accent);
+  border-radius: 999px;
+}
+
+.menu-nav a:hover,
+.menu-nav a:focus-visible {
+  background: var(--accent);
+  color: var(--bg);
+}
+
+/* Category sections */
+.menu-category {
+  scroll-margin-top: 90px; /* stops the sticky header covering the heading */
+  margin-bottom: 44px;
+}
+
+.menu-category h2 {
+  color: var(--accent);
+  font-size: 32px;
+  margin: 0 0 8px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--accent);
+}
+
+/* Dishes */
+.dish-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.dish {
+  padding: 14px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.dish-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 16px;
+}
+
+.dish-name {
+  font-family: var(--font-body);
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text);
+  margin: 0;
+}
+
+.dish-en {
+  font-weight: 400;
+  color: var(--text-soft);
+}
+
+.dish-v {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.dish-price {
+  color: var(--highlight);
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.dish-desc {
+  margin: 4px 0 0;
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--text-soft);
+}
+
+.menu-status {
+  color: var(--text-soft);
+}
+
+@media (max-width: 600px) {
+  .menu-page { padding: 32px 16px 48px; }
+  .menu-page h1 { font-size: 34px; }
+}

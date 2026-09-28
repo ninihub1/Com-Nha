@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Menu | Cơm Nhà Restaurant</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/menu.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,600;1,400&family=Be+Vietnam+Pro:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body data-partial-prefix="../">
+
+  <div id="site-header"></div>
+
+  <!-- Menu page layout (issue #5). Dishes are loaded from data/menu.json by js/menu.js -->
+  <main class="menu-page">
+    <h1>Our Menu</h1>
+    <p class="menu-key">[V] = vegetarian option available</p>
+
+    <nav class="menu-nav" id="menu-nav" aria-label="Menu categories"></nav>
+
+    <div id="menu-sections">
+      <p class="menu-status">Loading menu…</p>
+    </div>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="../js/include.js"></script>
+  <script src="../js/menu.js"></script>
+</body>
+</html>

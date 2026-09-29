@@ -21,17 +21,24 @@
 
   <main>
     <section id="hero">
-      <h1>Home-cooked Vietnamese, the way it's meant to be shared.</h1>
-      <p>Traditional family flavours, served with a modern touch in Westminster, Perth.</p>
+      <p class="eyebrow">Westminster, WA</p>
+      <h1>From our home to your heart</h1>
+      <p>Home-style Vietnamese cooking, served the way family taught us. Dine in, order a family set, or book us for your next event.</p>
+      <div class="hero-buttons">
+        <a class="btn btn-primary" href="menu.html">View Menu</a>
+        <a class="btn btn-outline" href="#catering">Book Catering</a>
+      </div>
     </section>
 
     <section id="marquee"></section>
 
     <section id="story">
-      <h2>Our Story</h2>
-      <p>In Vietnamese, <em>cơm nhà</em> means home-cooked rice, the everyday meal a family shares at the end of the day. It isn't a special-occasion dish. It's the table everyone comes back to.</p>
-      <p>Cơm Nhà brings that table to Westminster. Our dishes follow the traditional flavours of Vietnamese home cooking: slow braises, bright soups and fresh herbs, made the way they are at home.</p>
-      <p>We serve them in a space that is modern and unhurried, so the food can speak for itself. Whether you're sharing a set with family or stopping in for a quiet meal, we want every visit to feel like coming home.</p>
+      <div class="story-text">
+        <p class="eyebrow">Our Story</p>
+        <h2>A family kitchen, opened up</h2>
+        <p>Cơm Nhà means "home cooking." Every dish on our menu started at a family table before it ever reached a restaurant one — the recipes are the same, just made for more people.</p>
+      </div>
+      <div class="story-photo">[photo]</div>
     </section>
 
     <section id="signatures"></section>
@@ -79,8 +86,42 @@
       </div>
     </section>
 
-    <section id="catering"></section>
-    <section id="visit"></section>
+    <section id="catering">
+      <div class="catering-text">
+        <p class="eyebrow">Catering</p>
+        <h2>Feeding your next gathering</h2>
+        <p>Office lunches, birthdays, community events. Tell us the headcount and the date, we'll sort the rest.</p>
+      </div>
+      <form class="catering-form">
+        <label for="cat-name">Name</label>
+        <input type="text" id="cat-name" name="name">
+        <label for="cat-details">Event date &amp; headcount</label>
+        <input type="text" id="cat-details" name="details">
+        <button type="submit" class="btn btn-primary">Send enquiry</button>
+      </form>
+    </section>
+
+    <section id="visit">
+      <div class="visit-map">[map]</div>
+      <div class="visit-details">
+        <p class="eyebrow">Visit us</p>
+        <h2>Westminster, WA</h2>
+        <p>Shop 38, 478 Wanneroo Road<br>Westminster WA 6061</p>
+        <ul class="visit-hours">
+          <li>Tuesday to Saturday: 11am – 8:30pm</li>
+          <li>Sunday: 10:30am – 8:30pm</li>
+          <li>Monday: Closed</li>
+        </ul>
+        <p><a href="tel:+61894706438">(08) 9470 6438</a></p>
+        <p><a href="mailto:comnha.aus@gmail.com">comnha.aus@gmail.com</a></p>
+        <a class="rating-block" href="https://www.ubereats.com/au/store/com-nha-restaurant-westminster/_axrUWOhW5KjC9jTwBZXnQ" target="_blank" rel="noopener">
+          <p class="rating-score">★ 4.4 on Uber Eats</p>
+          <p class="rating-quote">"Always fresh and delicious."</p>
+          <p class="rating-author">– Trinh E.</p>
+          <p class="rating-link">Read more reviews on Uber Eats →</p>
+        </a>
+      </div>
+    </section>
   </main>
 
   <div id="site-footer"></div>

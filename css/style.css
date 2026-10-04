@@ -33,11 +33,19 @@ h1, h2, h3, h4 {
 header.nav {
   position: sticky; top: 0; z-index: 50;
   display: flex; align-items: center; justify-content: space-between;
-  padding: 16px 32px; background: #fff;
+  padding: 0 32px; background: #fff;
   border-bottom: 1px solid var(--line);
   gap: 16px; flex-wrap: wrap;
+  height: 100px;
 }
-.wordmark { font-family: var(--font-heading); font-size: 22px; font-weight: 700; color: var(--accent); }
+
+.brand-logo {
+  height: 100px;
+  width: auto;
+  display: block;
+  mix-blend-mode: multiply;
+}
+
 nav.links { display: flex; align-items: center; gap: 26px; font-size: 13px; flex-wrap: wrap; }
 nav.links a.navlink { color: var(--accent); }
 .phone-pill { background: var(--accent); color: #fff; padding: 10px 20px; border-radius: 999px; font-weight: 500; font-size: 13px; white-space: nowrap; }

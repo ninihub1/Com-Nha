@@ -7,16 +7,35 @@
   padding: 48px 32px 64px;
 }
 
-.menu-page h1 {
-  color: var(--accent);
-  font-size: 44px;
-  margin: 0 0 6px;
+/* Hero intro (issue #29) — matches the homepage #hero pattern:
+   eyebrow, heading, one line. Replaces the old bare h1 + .menu-key. */
+.menu-hero {
+  text-align: center;
+  max-width: 620px;
+  margin: 0 auto 40px;
+  padding: 24px 0 0;
 }
 
-.menu-key {
+.menu-hero .eyebrow {
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #8B3A2B;
+  margin: 0 0 12px;
+}
+
+.menu-hero h1 {
+  color: var(--accent);
+  font-weight: 400;
+  font-size: 44px;
+  margin: 0 0 14px;
+}
+
+.menu-hero p {
   color: var(--text-soft);
-  font-size: 14px;
-  margin: 0 0 24px;
+  font-size: 15px;
+  line-height: 1.7;
+  margin: 0;
 }
 
 /* Category nav */
@@ -115,5 +134,5 @@
 
 @media (max-width: 600px) {
   .menu-page { padding: 32px 16px 48px; }
-  .menu-page h1 { font-size: 34px; }
+  .menu-hero h1 { font-size: 32px; }
 }

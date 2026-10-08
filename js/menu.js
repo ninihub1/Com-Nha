@@ -35,6 +35,13 @@ async function loadMenu() {
 
       category.items.forEach((item) => {
         const dish = makeEl("li", "dish");
+
+        // Photo placeholder (issue #28) — no <img src> yet, just the
+        // reserved slot. Swap this for a real <img> once photos exist.
+        const thumb = makeEl("div", "dish-thumb", "photo");
+        dish.appendChild(thumb);
+
+        const main = makeEl("div", "dish-main");
         const top = makeEl("div", "dish-top");
 
         const name = makeEl("h3", "dish-name", item.name);
@@ -47,10 +54,11 @@ async function loadMenu() {
 
         top.appendChild(name);
         top.appendChild(makeEl("span", "dish-price", `$${item.price}`));
-        dish.appendChild(top);
+        main.appendChild(top);
 
-        if (item.description) dish.appendChild(makeEl("p", "dish-desc", item.description));
+        if (item.description) main.appendChild(makeEl("p", "dish-desc", item.description));
 
+        dish.appendChild(main);
         list.appendChild(dish);
       });
 

@@ -7,6 +7,20 @@
   padding: 48px 32px 64px;
 }
 
+/* Banner photo placeholder (issue #28) — swap the content for a real
+   <img> once a photo exists; keeps the layout reserved in the meantime. */
+.menu-banner {
+  height: 220px;
+  margin: -48px -32px 0;
+  background: var(--card);
+  border-bottom: 1px solid var(--line);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-soft);
+  font-size: 13px;
+}
+
 /* Hero intro (issue #29) — matches the homepage #hero pattern:
    eyebrow, heading, one line. Replaces the old bare h1 + .menu-key. */
 .menu-hero {
@@ -86,8 +100,34 @@
 }
 
 .dish {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
   padding: 14px 0;
   border-bottom: 1px solid var(--line);
+}
+
+/* Dish photo placeholder (issue #28) — swap the content for a real
+   <img> once photos exist per dish; built in menu.js since dishes
+   render dynamically from menu.json. */
+.dish-thumb {
+  flex: 0 0 64px;
+  width: 64px;
+  height: 64px;
+  border-radius: 8px;
+  background: var(--card);
+  border: 1px solid var(--line);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-soft);
+  font-size: 9px;
+  text-align: center;
+}
+
+.dish-main {
+  flex: 1;
+  min-width: 0;
 }
 
 .dish-top {
@@ -134,5 +174,7 @@
 
 @media (max-width: 600px) {
   .menu-page { padding: 32px 16px 48px; }
+  .menu-banner { height: 160px; margin: -32px -16px 0; }
   .menu-hero h1 { font-size: 32px; }
+  .dish-thumb { flex-basis: 48px; width: 48px; height: 48px; }
 }

@@ -36,7 +36,7 @@ header.nav {
   padding: 0 32px; background: #fff;
   border-bottom: 1px solid var(--line);
   gap: 16px; flex-wrap: wrap;
-  height: 100px;
+  min-height: 100px;
 }
 
 .brand-logo {
@@ -319,5 +319,55 @@ footer.site { background: var(--accent); padding: 40px 32px; color: #fff; }
   #catering,
   #visit {
     grid-template-columns: 1fr;
+  }
+}
+
+/* phones: tighter header and catering spacing (issue #56) */
+@media (max-width: 600px) {
+  header.nav { padding: 8px 16px; gap: 8px; }
+  .brand-logo { height: 72px; }
+  nav.links { gap: 8px 18px; }
+  #catering { gap: 24px; }
+}
+
+/* ---------- hamburger menu (issue #52) ---------- */
+.nav-toggle { display: none; }
+
+@media (max-width: 768px) {
+  .nav-toggle {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    width: 44px;
+    height: 44px;
+    padding: 10px;
+    background: none;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    cursor: pointer;
+  }
+  .nav-toggle-bar {
+    display: block;
+    height: 2px;
+    background: var(--accent);
+    border-radius: 2px;
+  }
+  .nav-toggle:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+  }
+
+  /* links hidden until the button is pressed */
+  header.nav nav.links { display: none; }
+
+  header.nav.nav-open nav.links {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    flex-basis: 100%;
+    gap: 16px;
+    padding: 8px 0 20px;
+    font-size: 15px;
   }
 }

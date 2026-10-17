@@ -36,7 +36,7 @@ header.nav {
   padding: 0 32px; background: #fff;
   border-bottom: 1px solid var(--line);
   gap: 16px; flex-wrap: wrap;
-  height: 100px;
+  min-height: 100px;
 }
 
 .brand-logo {
@@ -320,4 +320,12 @@ footer.site { background: var(--accent); padding: 40px 32px; color: #fff; }
   #visit {
     grid-template-columns: 1fr;
   }
+}
+
+/* phones: tighter header and catering spacing (issue #56) */
+@media (max-width: 600px) {
+  header.nav { padding: 8px 16px; gap: 8px; }
+  .brand-logo { height: 72px; }
+  nav.links { gap: 8px 18px; }
+  #catering { gap: 24px; }
 }

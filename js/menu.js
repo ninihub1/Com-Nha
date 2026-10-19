@@ -1,4 +1,4 @@
-// Menu page (issue #5).
+// Menu page.
 // Reads data/menu.json and builds the category nav and the dish lists.
 // Like include.js, this needs a local server to preview (fetch is blocked on file://).
 
@@ -82,8 +82,7 @@ async function loadMenu() {
       category.items.forEach((item) => {
         const dish = makeEl("li", "dish");
 
-        // Photo placeholder (issue #28) — no <img src> yet, just the
-        // reserved slot. Swap this for a real <img> once photos exist.
+        // Photo placeholder
         const thumb = makeEl("div", "dish-thumb", "photo");
         dish.appendChild(thumb);
 

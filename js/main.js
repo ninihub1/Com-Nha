@@ -1,4 +1,4 @@
-// Site-wide JS. Header/footer include logic now lives in js/include.js (issue #1).
+// Site-wide JS. Header/footer include logic now lives in js/include.js .
 
 // Catering form: send to Formspree and show a message
 const cateringForm = document.getElementById('catering-form');

@@ -1,4 +1,4 @@
-/* ---------- menu page (issue #5) ----------
+/* ---------- menu page  ----------
    Menu-page-only styles. Uses the colour and font variables from style.css. */
 
 .menu-page {
@@ -7,8 +7,7 @@
   padding: 48px 32px 64px;
 }
 
-/* Banner photo placeholder (issue #28) — swap the content for a real
-   <img> once a photo exists; keeps the layout reserved in the meantime. */
+/* Banner photo placeholder */
 .menu-banner {
   height: 220px;
   margin: -48px -32px 0;
@@ -21,7 +20,7 @@
   font-size: 13px;
 }
 
-/* Hero intro (issue #29) — matches the homepage #hero pattern:
+/* Hero intro  — matches the homepage #hero pattern:
    eyebrow, heading, one line. Replaces the old bare h1 + .menu-key. */
 .menu-hero {
   text-align: center;
@@ -107,9 +106,7 @@
   border-bottom: 1px solid var(--line);
 }
 
-/* Dish photo placeholder (issue #28) — swap the content for a real
-   <img> once photos exist per dish; built in menu.js since dishes
-   render dynamically from menu.json. */
+/* Dish photo placeholder */
 .dish-thumb {
   flex: 0 0 64px;
   width: 64px;

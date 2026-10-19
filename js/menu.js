@@ -9,6 +9,52 @@ function makeEl(tag, className, text) {
   return el;
 }
 
+// Keeps the category pills pinned and highlights the one being read
+function setupStickyNav(nav) {
+  const links = nav.querySelectorAll("a");
+  const sections = document.querySelectorAll(".menu-category");
+
+  // Work out the header height so the pills sit just under it
+  function setOffset() {
+    const wrap = document.getElementById("site-header");
+    let h = 0;
+    [wrap, wrap && wrap.firstElementChild].forEach((el) => {
+      if (!el) return;
+      const pos = getComputedStyle(el).position;
+      if (pos === "sticky" || pos === "fixed") h = el.offsetHeight;
+    });
+    document.documentElement.style.setProperty("--header-h", `${h}px`);
+  }
+  setOffset();
+  window.addEventListener("load", setOffset);
+  window.addEventListener("resize", setOffset);
+
+  function setActive(id) {
+    links.forEach((link) => {
+      const on = link.getAttribute("href") === `#${id}`;
+      link.classList.toggle("active", on);
+      if (on) {
+        link.setAttribute("aria-current", "true");
+        // On phones, slide the pill row so the active pill is visible
+        if (nav.scrollWidth > nav.clientWidth) {
+          nav.scrollTo({ left: link.offsetLeft - 16, behavior: "smooth" });
+        }
+      } else {
+        link.removeAttribute("aria-current");
+      }
+    });
+  }
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) setActive(entry.target.id);
+    });
+  }, { rootMargin: "-30% 0px -60% 0px" });
+
+  sections.forEach((section) => observer.observe(section));
+  if (sections[0]) setActive(sections[0].id);
+}
+
 async function loadMenu() {
   const nav = document.getElementById("menu-nav");
   const container = document.getElementById("menu-sections");
@@ -65,6 +111,9 @@ async function loadMenu() {
       section.appendChild(list);
       container.appendChild(section);
     });
+
+    // Pin the category pills and highlight the current one
+    setupStickyNav(nav);
   } catch (err) {
     console.error("Could not load menu:", err);
     container.innerHTML = "";

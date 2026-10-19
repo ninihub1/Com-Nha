@@ -177,4 +177,24 @@
   .menu-banner { height: 160px; margin: -32px -16px 0; }
   .menu-hero h1 { font-size: 32px; }
   .dish-thumb { flex-basis: 48px; width: 48px; height: 48px; }
+} 
+
+/* Category pills stay pinned under the header */
+.menu-nav {
+  position: sticky;
+  top: var(--header-h, 0px);
+  z-index: 50;
+  background: #fff;
+}
+
+/* Pill for the category being read */
+.menu-nav a.active {
+  background: #8b2e1f;
+  border-color: #8b2e1f;
+  color: #fff;
+}
+
+/* Stops section titles hiding under the pills when you click a pill */
+.menu-category {
+  scroll-margin-top: calc(var(--header-h, 0px) + 80px);
 }

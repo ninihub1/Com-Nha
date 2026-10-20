@@ -30,6 +30,10 @@ h1, h2, h3, h4 {
 }
 
 /* ---------- nav (issue #1) ---------- */
+/* The header sits inside #site-header, so that wrapper is what has to be
+   sticky. Sticky on the header alone does nothing, because the wrapper is
+   exactly as tall as the header. */
+#site-header { position: sticky; top: 0; z-index: 60; }
 header.nav {
   position: sticky; top: 0; z-index: 50;
   display: flex; align-items: center; justify-content: space-between;

@@ -184,17 +184,30 @@
   position: sticky;
   top: var(--header-h, 0px);
   z-index: 50;
-  background: #fff;
+  background: var(--bg);
+  flex-wrap: nowrap;           /* one row; swipe sideways if it does not fit */
+  overflow-x: auto;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
 }
+.menu-nav::-webkit-scrollbar { display: none; }
+.menu-nav a { flex: 0 0 auto; white-space: nowrap; }
 
 /* Pill for the category being read */
 .menu-nav a.active {
-  background: #8b2e1f;
-  border-color: #8b2e1f;
+  background: var(--highlight);
+  border-color: var(--highlight);
   color: #fff;
 }
 
-/* Stops section titles hiding under the pills when you click a pill */
+/* Stops section titles hiding under the header and pills when you tap a pill */
 .menu-category {
   scroll-margin-top: calc(var(--header-h, 0px) + 80px);
+}
+
+/* phones: slimmer pill row so it leaves room for the dishes */
+@media (max-width: 600px) {
+  .menu-nav { gap: 8px; padding: 10px 0; margin-bottom: 24px; }
+  .menu-nav a { font-size: 13px; padding: 5px 12px; }
+  .menu-category { scroll-margin-top: calc(var(--header-h, 0px) + 56px); }
 }

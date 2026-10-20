@@ -28,6 +28,11 @@ function setupStickyNav(nav) {
   setOffset();
   window.addEventListener("load", setOffset);
   window.addEventListener("resize", setOffset);
+  // The header is loaded after this runs and its height changes on phones
+  const headerWrap = document.getElementById("site-header");
+  if (headerWrap && "ResizeObserver" in window) {
+    new ResizeObserver(setOffset).observe(headerWrap);
+  }
 
   function setActive(id) {
     links.forEach((link) => {

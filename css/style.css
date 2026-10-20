@@ -1,5 +1,6 @@
 /* Global stylesheet
-   CSS variables (colour palette, typography scale) and shared button and card styles.
+   CSS variables (colour palette, typography scale) confirmed here in issue #2.
+   Button and card component styles go in issue #3.
    Keep this file the single source of truth for colours and spacing,
    pages should not hardcode their own values. */
 
@@ -28,7 +29,7 @@ h1, h2, h3, h4 {
   font-family: var(--font-heading);
 }
 
-/* ---------- nav  ---------- */
+/* ---------- nav (issue #1) ---------- */
 header.nav {
   position: sticky; top: 0; z-index: 50;
   display: flex; align-items: center; justify-content: space-between;
@@ -49,7 +50,7 @@ nav.links { display: flex; align-items: center; gap: 26px; font-size: 13px; flex
 nav.links a.navlink { color: var(--accent); }
 .phone-pill { background: var(--accent); color: #fff; padding: 10px 20px; border-radius: 999px; font-weight: 500; font-size: 13px; white-space: nowrap; }
 
-/* ---------- footer  ---------- */
+/* ---------- footer (issue #1) ---------- */
 footer.site { background: var(--accent); padding: 40px 32px; color: #fff; }
 .footer-grid { max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; gap: 36px; flex-wrap: wrap; }
 .foot-brand { display: flex; flex-direction: column; gap: 10px; max-width: 300px; }
@@ -59,7 +60,7 @@ footer.site { background: var(--accent); padding: 40px 32px; color: #fff; }
 .foot-col a { color: rgba(255,255,255,0.85); }
 .foot-bottom { max-width: 1100px; margin: 24px auto 0; border-top: 1px solid rgba(255,255,255,0.2); padding-top: 16px; font-size: 11px; opacity: .6; }
 
-/* ---------- family sets cards  ---------- */
+/* ---------- family sets cards (issue #6) ---------- */
 #mam-com {
   border-top: 1px solid var(--line);
   max-width: 1100px;

@@ -94,13 +94,18 @@
         <h2>Feeding your next gathering</h2>
         <p>Office lunches, birthdays, community events. Tell us the headcount and the date, we'll sort the rest.</p>
       </div>
-      <form class="catering-form">
-        <label for="cat-name">Name</label>
-        <input type="text" id="cat-name" name="name">
-        <label for="cat-details">Event date &amp; headcount</label>
-        <input type="text" id="cat-details" name="details">
-        <button type="submit" class="btn btn-primary">Send enquiry</button>
-      </form>
+             <form id="catering-form" action="https://formspree.io/f/xqpejjwp" method="POST">
+          <label for="cat-name">Name</label>
+          <input type="text" id="cat-name" name="name" required>
+          <label for="cat-email">Email</label>
+          <input type="email" id="cat-email" name="email" required>
+          <label for="cat-phone">Phone</label>
+          <input type="tel" id="cat-phone" name="phone" pattern="[0-9 +()-]{8,15}">
+          <label for="cat-details">Event date &amp; headcount</label>
+          <input type="text" id="cat-details" name="details" required>
+          <button type="submit" class="btn btn-primary">Send enquiry</button>
+          <p id="form-status" role="status" hidden></p>
+        </form>
     </section>
 
     <section id="visit">

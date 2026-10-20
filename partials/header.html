@@ -1,8 +1,14 @@
 <header class="nav">
   <a class="wordmark" href="index.html">
-    <img src="/assets/logo.png" alt="Cơm Nhà — Vietnamese Cuisine Restaurant" class="brand-logo">
+    <img src="assets/logo.jpeg" alt="Cơm Nhà — Vietnamese Cuisine Restaurant" class="brand-logo">
   </a>
-  <nav class="links">
+  <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu">
+    <span class="nav-toggle-bar"></span>
+    <span class="nav-toggle-bar"></span>
+    <span class="nav-toggle-bar"></span>
+  </button>
+  <div class="nav-backdrop"></div>
+  <nav class="links" id="site-nav">
     <a class="navlink" href="index.html#story">OUR STORY</a>
     <a class="navlink" href="pages/menu.html">MENU</a>
     <a class="navlink" href="index.html#mam-com">FAMILY SETS</a>
@@ -12,3 +18,10 @@
   </nav>
 </header>
 
+<!--
+  Note for the team: the original design shows a shorter nav on the menu
+  page (no Visit Us link). Using one shared header for both pages is
+  simpler to maintain, so this keeps all 5 links everywhere. If we want
+  to match the design exactly, Dakshraj's menu page can load a second,
+  shorter partial instead, worth a quick decision before Week 6.
+-->

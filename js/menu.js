@@ -60,6 +60,24 @@ function setupStickyNav(nav) {
   if (sections[0]) setActive(sections[0].id);
 }
 
+// Vegetarian filter (issue #50).
+// Adds a toggle to the category bar. When it is on, only dishes marked
+// [V] are shown, and categories with no [V] dishes (and their pills) hide.
+function setupVegFilter(nav, container) {
+  const toggle = makeEl("button", "veg-toggle", "[V] Vegetarian only");
+  toggle.type = "button";
+  toggle.setAttribute("aria-pressed", "false");
+
+  toggle.addEventListener("click", () => {
+    const on = toggle.getAttribute("aria-pressed") !== "true";
+    toggle.setAttribute("aria-pressed", String(on));
+    nav.classList.toggle("veg-only", on);
+    container.classList.toggle("veg-only", on);
+  });
+
+  nav.prepend(toggle);
+}
+
 async function loadMenu() {
   const nav = document.getElementById("menu-nav");
   const container = document.getElementById("menu-sections");
@@ -77,15 +95,21 @@ async function loadMenu() {
       link.href = `#${category.id}`;
       nav.appendChild(link);
 
+      // Used by the vegetarian filter (issue #50) to hide categories with no [V] dishes
+      const hasVeg = category.items.some((item) => item.vegetarian);
+      if (!hasVeg) link.classList.add("no-veg");
+
       // Category section
       const section = makeEl("section", "menu-category");
       section.id = category.id;
+      if (!hasVeg) section.classList.add("no-veg");
       section.appendChild(makeEl("h2", "", category.name));
 
       const list = makeEl("ul", "dish-list");
 
       category.items.forEach((item) => {
         const dish = makeEl("li", "dish");
+        if (item.vegetarian) dish.classList.add("is-veg");
 
         // Photo placeholder (issue #28) — no <img src> yet, just the
         // reserved slot. Swap this for a real <img> once photos exist.
@@ -116,6 +140,9 @@ async function loadMenu() {
       section.appendChild(list);
       container.appendChild(section);
     });
+
+    // Vegetarian-only toggle at the start of the category bar (issue #50)
+    setupVegFilter(nav, container);
 
     // Pin the category pills and highlight the current one
     setupStickyNav(nav);

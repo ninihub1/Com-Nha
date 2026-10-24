@@ -211,3 +211,40 @@
   .menu-nav a { font-size: 13px; padding: 5px 12px; }
   .menu-category { scroll-margin-top: calc(var(--header-h, 0px) + 56px); }
 }
+
+/* ---------- vegetarian filter (issue #50) ---------- */
+/* Toggle sits first in the category bar; looks like a pill until it is on */
+.veg-toggle {
+  flex: 0 0 auto;
+  white-space: nowrap;
+  font-family: var(--font-body);
+  font-size: 14px;
+  padding: 6px 14px;
+  border-radius: 999px;
+  border: 1px dashed var(--accent);
+  background: transparent;
+  color: var(--accent);
+  cursor: pointer;
+}
+
+.veg-toggle:hover,
+.veg-toggle:focus-visible {
+  border-style: solid;
+}
+
+.veg-toggle[aria-pressed="true"] {
+  background: var(--accent);
+  border-style: solid;
+  color: #fff;
+}
+
+/* Filter on: hide non-[V] dishes, and categories/pills with no [V] dishes */
+#menu-sections.veg-only .dish:not(.is-veg),
+#menu-sections.veg-only .menu-category.no-veg,
+.menu-nav.veg-only a.no-veg {
+  display: none;
+}
+
+@media (max-width: 600px) {
+  .veg-toggle { font-size: 13px; padding: 5px 12px; }
+}

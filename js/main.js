@@ -4,28 +4,40 @@
 const cateringForm = document.getElementById('catering-form');
 if (cateringForm) {
   const statusMsg = document.getElementById('form-status');
+  const sendBtn = cateringForm.querySelector('button[type="submit"]');
+  const failText = 'Sorry, something went wrong. Please call us instead.';
+
+  function showStatus(text, isError) {
+    statusMsg.hidden = false;
+    statusMsg.textContent = text;
+    statusMsg.classList.toggle('is-error', isError);
+  }
+
   cateringForm.addEventListener('submit', async (e) => {
     e.preventDefault();
     if (!cateringForm.checkValidity()) {
       cateringForm.reportValidity();
       return;
     }
+    sendBtn.disabled = true;
+    sendBtn.textContent = 'Sending...';
     try {
       const res = await fetch(cateringForm.action, {
         method: 'POST',
         body: new FormData(cateringForm),
         headers: { Accept: 'application/json' }
       });
-      statusMsg.hidden = false;
       if (res.ok) {
-        statusMsg.textContent = 'Thanks! We got your enquiry and will be in touch soon.';
+        showStatus('Thanks! We got your enquiry and will be in touch soon.', false);
         cateringForm.reset();
       } else {
-        statusMsg.textContent = 'Sorry, something went wrong. Please call us instead.';
+        showStatus(failText, true);
       }
     } catch {
-      statusMsg.hidden = false;
-      statusMsg.textContent = 'Sorry, something went wrong. Please call us instead.';
+      showStatus(failText, true);
+    } finally {
+      sendBtn.disabled = false;
+      sendBtn.textContent = 'Send enquiry';
     }
   });
 }

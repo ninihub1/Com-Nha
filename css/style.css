@@ -258,6 +258,30 @@ footer.site { background: var(--accent); padding: 40px 32px; color: #fff; }
   width: 100%;
 }
 
+.catering-form input:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 1px;
+}
+
+.catering-form .btn:disabled {
+  opacity: .6;
+  cursor: wait;
+}
+
+/* message shown after sending */
+#form-status {
+  margin: 16px 0 0;
+  padding: 12px 14px;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  background: #E8EFE3;
+  color: var(--accent);
+}
+#form-status.is-error {
+  background: #F3E4DF;
+  color: var(--highlight);
+}
+
 /* visit */
 #visit {
   display: grid;

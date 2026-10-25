@@ -184,8 +184,9 @@ footer.site { background: var(--accent); padding: 40px 32px; color: #fff; }
   color: #1F3D22;
 }
 
-/* marquee: scrolling dish strip between hero and story
-   static for now — see this file's bottom note for the looping version */
+/* marquee: looping dish strip between hero and story.
+   Stays on one line, pauses on hover/touch (touch class added in js/main.js),
+   and stops for visitors with reduced motion turned on. */
 #marquee {
   background: var(--accent);
   color: var(--bg);
@@ -193,8 +194,60 @@ footer.site { background: var(--accent); padding: 40px 32px; color: #fff; }
   font-family: var(--font-heading);
   font-style: italic;
   font-size: 18px;
-  text-align: center;
   letter-spacing: 0.02em;
+  overflow: hidden;      /* hide the part that's off-screen */
+  white-space: nowrap;   /* never wrap onto two lines */
+}
+
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee-scroll 30s linear infinite;
+}
+
+.marquee-list {
+  display: flex;
+  flex-shrink: 0;
+  min-width: 100vw;               /* each copy is at least as wide as the screen */
+  justify-content: space-around;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.marquee-list li {
+  display: flex;
+  align-items: center;
+  gap: 1.5em;
+  padding-right: 1.5em;
+}
+
+.marquee-list li::after {
+  content: "·";                   /* dot between dishes */
+}
+
+/* move left by exactly one copy, then start again */
+@keyframes marquee-scroll {
+  to { transform: translateX(-50%); }
+}
+
+/* pause on mouse hover, or while a finger is on it */
+#marquee:hover .marquee-track,
+#marquee.is-paused .marquee-track {
+  animation-play-state: paused;
+}
+
+/* reduced motion: no animation, visitors can swipe/scroll it by hand */
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track {
+    animation: none;
+  }
+  #marquee {
+    overflow-x: auto;
+  }
+  .marquee-list[aria-hidden="true"] {
+    display: none;
+  }
 }
 
 /* our story */
@@ -325,6 +378,7 @@ footer.site { background: var(--accent); padding: 40px 32px; color: #fff; }
     grid-template-columns: 1fr;
   }
 }
+
 
 /* phones: tighter header and catering spacing (issue #56) */
 @media (max-width: 600px) {

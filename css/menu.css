@@ -211,3 +211,98 @@
   .menu-nav a { font-size: 13px; padding: 5px 12px; }
   .menu-category { scroll-margin-top: calc(var(--header-h, 0px) + 56px); }
 }
+
+/* ready to order panel (issue #39) */
+.order-panel {
+  max-width: 620px;
+  margin: 0 auto 40px;
+  padding: 32px 32px 30px;
+  background: #ffffff;
+  border: 1px solid var(--line);
+  border-top: 4px solid var(--accent);
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 8px 24px rgba(33, 48, 31, .08);
+}
+.order-panel .eyebrow {
+  margin: 0 0 6px;
+  color: var(--highlight);
+  font-size: 0.75rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+.order-panel h2 {
+  margin: 0 0 22px;
+  font-family: var(--font-heading);
+  font-size: 2rem;
+  font-weight: 500;
+  color: var(--accent);
+}
+
+/* Pickup / Delivery switch */
+.order-choice {
+  display: inline-flex;
+  gap: 4px;
+  margin: 0 0 20px;
+  padding: 5px;
+  border: 0;
+  border-radius: 999px;
+  background: var(--card);
+}
+.order-option input {
+  position: absolute;
+  opacity: 0;
+}
+.order-option span {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 26px;
+  border-radius: 999px;
+  color: var(--accent);
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: background .2s ease, color .2s ease;
+}
+.order-option:hover span { background: rgba(33, 71, 33, .08); }
+.order-option input:checked + span {
+  background: var(--accent);
+  color: #ffffff;
+}
+.order-option input:focus-visible + span {
+  outline: 2px solid var(--highlight);
+  outline-offset: 2px;
+}
+
+.order-note {
+  max-width: 460px;
+  margin: 0 auto 24px;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  min-height: 3.2em;
+}
+.order-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+}
+.order-actions .btn { padding: 14px 32px; }
+.order-actions [hidden] { display: none; }
+
+@media (max-width: 600px) {
+  .order-panel { margin: 0 16px 32px; padding: 26px 20px 24px; }
+  .order-panel h2 { font-size: 1.7rem; }
+  .order-option span { padding: 10px 18px; }
+  .order-actions .btn { width: 100%; text-align: center; }
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}

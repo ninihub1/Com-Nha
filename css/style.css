@@ -30,13 +30,17 @@ h1, h2, h3, h4 {
 }
 
 /* ---------- nav (issue #1) ---------- */
+/* The header sits inside #site-header, so that wrapper is what has to be
+   sticky. Sticky on the header alone does nothing, because the wrapper is
+   exactly as tall as the header. */
+#site-header { position: sticky; top: 0; z-index: 60; }
 header.nav {
   position: sticky; top: 0; z-index: 50;
   display: flex; align-items: center; justify-content: space-between;
   padding: 0 32px; background: #fff;
   border-bottom: 1px solid var(--line);
   gap: 16px; flex-wrap: wrap;
-  height: 100px;
+  min-height: 100px;
 }
 
 .brand-logo {
@@ -180,8 +184,9 @@ footer.site { background: var(--accent); padding: 40px 32px; color: #fff; }
   color: #1F3D22;
 }
 
-/* marquee: scrolling dish strip between hero and story
-   static for now — see this file's bottom note for the looping version */
+/* marquee: looping dish strip between hero and story.
+   Stays on one line, pauses on hover/touch (touch class added in js/main.js),
+   and stops for visitors with reduced motion turned on. */
 #marquee {
   background: var(--accent);
   color: var(--bg);
@@ -189,8 +194,60 @@ footer.site { background: var(--accent); padding: 40px 32px; color: #fff; }
   font-family: var(--font-heading);
   font-style: italic;
   font-size: 18px;
-  text-align: center;
   letter-spacing: 0.02em;
+  overflow: hidden;      /* hide the part that's off-screen */
+  white-space: nowrap;   /* never wrap onto two lines */
+}
+
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee-scroll 30s linear infinite;
+}
+
+.marquee-list {
+  display: flex;
+  flex-shrink: 0;
+  min-width: 100vw;               /* each copy is at least as wide as the screen */
+  justify-content: space-around;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.marquee-list li {
+  display: flex;
+  align-items: center;
+  gap: 1.5em;
+  padding-right: 1.5em;
+}
+
+.marquee-list li::after {
+  content: "·";                   /* dot between dishes */
+}
+
+/* move left by exactly one copy, then start again */
+@keyframes marquee-scroll {
+  to { transform: translateX(-50%); }
+}
+
+/* pause on mouse hover, or while a finger is on it */
+#marquee:hover .marquee-track,
+#marquee.is-paused .marquee-track {
+  animation-play-state: paused;
+}
+
+/* reduced motion: no animation, visitors can swipe/scroll it by hand */
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track {
+    animation: none;
+  }
+  #marquee {
+    overflow-x: auto;
+  }
+  .marquee-list[aria-hidden="true"] {
+    display: none;
+  }
 }
 
 /* our story */
@@ -344,4 +401,129 @@ footer.site { background: var(--accent); padding: 40px 32px; color: #fff; }
   #visit {
     grid-template-columns: 1fr;
   }
+}
+
+
+/* phones: tighter header and catering spacing (issue #56) */
+@media (max-width: 600px) {
+  header.nav { padding: 8px 16px; gap: 8px; }
+  .brand-logo { height: 72px; }
+  nav.links { gap: 8px 18px; }
+  #catering { gap: 24px; }
+}
+
+/* ---------- hamburger menu and side drawer (issue #52) ---------- */
+.nav-toggle,
+.nav-backdrop { display: none; }
+
+@media (max-width: 768px) {
+  /* just the three lines, no box around them */
+  .nav-toggle {
+    position: relative;
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    background: none;
+    border: 0;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .nav-toggle-bar {
+    display: block;
+    width: 26px;
+    height: 2px;
+    background: var(--accent);
+    border-radius: 2px;
+    transition: transform .3s ease, opacity .2s ease;
+  }
+  .nav-toggle:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+    border-radius: 6px;
+  }
+
+  /* the three lines turn into an X while the drawer is open */
+  header.nav.nav-open .nav-toggle-bar:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+  header.nav.nav-open .nav-toggle-bar:nth-child(2) { opacity: 0; }
+  header.nav.nav-open .nav-toggle-bar:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+
+  /* dark overlay behind the drawer; tap it to close */
+  .nav-backdrop {
+    display: block;
+    position: fixed;
+    inset: 0;
+    z-index: 1;
+    background: rgba(33, 48, 31, 0.45);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .3s ease, visibility 0s linear .3s;
+  }
+  header.nav.nav-open .nav-backdrop {
+    opacity: 1;
+    visibility: visible;
+    transition: opacity .3s ease;
+  }
+
+  /* drawer that slides in from the right */
+  header.nav nav.links {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 2;
+    width: min(82vw, 340px);
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    flex-wrap: nowrap;
+    gap: 0;
+    padding: 96px 28px 32px;
+    background: var(--bg);
+    box-shadow: -12px 0 32px rgba(33, 48, 31, 0.18);
+    overflow-y: auto;
+    transform: translateX(100%);
+    visibility: hidden;
+    transition: transform .3s ease, visibility 0s linear .3s;
+  }
+  header.nav.nav-open nav.links {
+    transform: none;
+    visibility: visible;
+    transition: transform .3s ease;
+  }
+
+  header.nav nav.links a.navlink {
+    font-family: var(--font-heading);
+    font-size: 1.6rem;
+    color: var(--text);
+    padding: 16px 0;
+    border-bottom: 1px solid var(--line);
+    text-decoration: none;
+  }
+  header.nav nav.links a.navlink:hover,
+  header.nav nav.links a.navlink:focus-visible { color: var(--highlight); }
+  header.nav nav.links a.navlink:nth-last-child(2) { margin-bottom: 24px; }
+
+  header.nav nav.links .phone-pill {
+    margin-top: auto;
+    padding: 14px 20px;
+    font-size: 16px;
+    text-align: center;
+    text-decoration: none;
+  }
+
+  /* stop the page scrolling behind the open drawer */
+  body.nav-locked { overflow: hidden; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nav-toggle-bar,
+  .nav-backdrop,
+  header.nav nav.links { transition: none; }
 }

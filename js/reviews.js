@@ -60,7 +60,7 @@
   function stop() { clearInterval(timer); timer = null; }
   function start() {
     if (reduceMotion.matches || timer) return;
-    timer = setInterval(next, 7000);
+    timer = setInterval(next, 4000);
   }
   function restart() { stop(); start(); }
 

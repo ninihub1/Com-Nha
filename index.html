@@ -57,7 +57,7 @@
         <h2>A family kitchen, opened up</h2>
         <p>Cơm Nhà means "home cooking." Every dish on our menu started at a family table before it ever reached a restaurant one — the recipes are the same, just made for more people.</p>
       </div>
-      <div class="story-photo">[photo]</div>
+      <div class="story-photo" aria-hidden="true">[photo]</div>
     </section>
 
     <section id="signatures"></section>
@@ -117,7 +117,7 @@
         <label for="cat-email">Email</label>
         <input type="email" id="cat-email" name="email" autocomplete="email" required>
         <label for="cat-phone">Phone (optional)</label>
-        <input type="tel" id="cat-phone" name="phone" autocomplete="tel" pattern="[0-9 +()\-]{8,15}">
+        <input type="tel" id="cat-phone" name="phone" autocomplete="tel" pattern="[0-9 +()\-]{8,15}" title="Numbers, spaces and + ( ) - only, 8 to 15 characters">
         <label for="cat-details">Event date &amp; headcount</label>
         <input type="text" id="cat-details" name="details" required>
         <button type="submit" class="btn btn-primary">Send enquiry</button>

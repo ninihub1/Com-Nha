@@ -39,6 +39,7 @@
     d.type = 'button';
     d.className = 'rating-dot' + (i === 0 ? ' is-active' : '');
     d.setAttribute('aria-label', 'Show review ' + (i + 1) + ' of ' + reviews.length);
+    if (i === 0) d.setAttribute('aria-current', 'true');
     d.addEventListener('click', () => { show(i); restart(); });
     dotsBox.appendChild(d);
     return d;
@@ -51,9 +52,11 @@
   function show(i) {
     slides[current].classList.remove('is-active');
     dots[current].classList.remove('is-active');
+    dots[current].removeAttribute('aria-current');
     current = i;
     slides[current].classList.add('is-active');
     dots[current].classList.add('is-active');
+    dots[current].setAttribute('aria-current', 'true');
   }
 
   function next() { show((current + 1) % slides.length); }

@@ -29,13 +29,31 @@ document.addEventListener("click", (e) => {
 });
 
 // Escape closes the drawer and puts focus back on the button.
+// While the drawer is open, Tab loops between the button and the drawer links,
+// so keyboard focus never lands on the page hidden behind the dark overlay.
 document.addEventListener("keydown", (e) => {
-  if (e.key !== "Escape") return;
   const header = document.querySelector("header.nav.nav-open");
   if (!header) return;
-  setMenu(header, false);
   const toggle = header.querySelector(".nav-toggle");
-  if (toggle) toggle.focus();
+
+  if (e.key === "Escape") {
+    setMenu(header, false);
+    if (toggle) toggle.focus();
+    return;
+  }
+
+  if (e.key !== "Tab" || !toggle) return;
+  const items = [toggle, ...header.querySelectorAll("#site-nav a")];
+  const first = items[0];
+  const last = items[items.length - 1];
+  const inside = items.includes(document.activeElement);
+  if (e.shiftKey && (document.activeElement === first || !inside)) {
+    e.preventDefault();
+    last.focus();
+  } else if (!e.shiftKey && (document.activeElement === last || !inside)) {
+    e.preventDefault();
+    first.focus();
+  }
 });
 
 // If the window is widened past the phone layout, close the drawer.

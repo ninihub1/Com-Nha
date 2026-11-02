@@ -89,7 +89,10 @@ async function loadMenu() {
 
         // Photo placeholder (issue #28) — no <img src> yet, just the
         // reserved slot. Swap this for a real <img> once photos exist.
+        // aria-hidden: screen readers would otherwise say "photo" for every dish.
+        // When a real <img> goes in, drop aria-hidden and give it alt text.
         const thumb = makeEl("div", "dish-thumb", "photo");
+        thumb.setAttribute("aria-hidden", "true");
         dish.appendChild(thumb);
 
         const main = makeEl("div", "dish-main");
@@ -98,9 +101,12 @@ async function loadMenu() {
         const name = makeEl("h3", "dish-name", item.name);
         if (item.english) name.appendChild(makeEl("span", "dish-en", ` (${item.english})`));
         if (item.vegetarian) {
+          // [V] is visual only; screen readers get the words instead
+          // (title tooltips can't be reached by keyboard or touch).
           const v = makeEl("span", "dish-v", " [V]");
-          v.title = "Vegetarian option available";
+          v.setAttribute("aria-hidden", "true");
           name.appendChild(v);
+          name.appendChild(makeEl("span", "sr-only", " (vegetarian option available)"));
         }
 
         top.appendChild(name);

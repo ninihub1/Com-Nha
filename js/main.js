@@ -56,3 +56,13 @@ if (cateringForm) {
     }
   });
 }
+// Map focus ring: when focus moves into the Google map frame, the page itself
+// loses focus, so ring the map box instead (CSS .visit-map.frame-focused).
+const mapFrame = document.querySelector('.visit-map iframe');
+if (mapFrame) {
+  const mapBox = mapFrame.parentElement;
+  window.addEventListener('blur', () => {
+    setTimeout(() => mapBox.classList.toggle('frame-focused', document.activeElement === mapFrame));
+  });
+  window.addEventListener('focus', () => mapBox.classList.remove('frame-focused'));
+}

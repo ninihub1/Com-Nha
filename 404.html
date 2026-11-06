@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <title>Page not found | Cơm Nhà Restaurant</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;600&family=EB+Garamond&display=swap" rel="stylesheet">
+  <!--
+    404 page (issue #59).
+    This page can be shown at any wrong address, even deep ones like
+    /pages/abc/xyz, so it doesn't use relative paths: the styles are
+    inline and the header/footer partials aren't loaded.
+    Colours match the variables in css/style.css.
+  -->
+  <style>
+    :root {
+      --accent: #214721;
+      --highlight: #6E3C32;
+      --bg: #F3F1E9;
+      --text: #21301F;
+      --text-soft: #4A5245;
+    }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      box-sizing: border-box;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      background: var(--bg);
+      color: var(--text);
+      font-family: "Be Vietnam Pro", sans-serif;
+      text-align: center;
+    }
+    main { max-width: 480px; }
+    .wordmark {
+      font-family: "EB Garamond", serif;
+      font-size: 22px;
+      letter-spacing: .08em;
+      color: var(--accent);
+      margin: 0 0 32px;
+    }
+    .eyebrow {
+      font-size: 13px;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      color: var(--highlight);
+      margin: 0 0 8px;
+    }
+    h1 {
+      font-family: "EB Garamond", serif;
+      font-weight: 400;
+      font-size: clamp(2rem, 6vw, 2.8rem);
+      margin: 0 0 16px;
+    }
+    .lead {
+      color: var(--text-soft);
+      line-height: 1.6;
+      margin: 0 0 28px;
+    }
+    .btn {
+      display: inline-block;
+      padding: 12px 26px;
+      border-radius: 999px;
+      background: var(--accent);
+      color: #fff;
+      font-weight: 600;
+      text-decoration: none;
+    }
+    .btn:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 3px;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <p class="wordmark">CƠM NHÀ</p>
+    <p class="eyebrow">Page not found</p>
+    <h1>This dish isn't on our table</h1>
+    <p class="lead">The page you're looking for doesn't exist or may have moved. Head back to the homepage to see our menu, family sets and catering.</p>
+    <a class="btn" id="home-link" href="/">Back to homepage</a>
+  </main>
+  <script>
+    // On GitHub Pages project sites the site lives under /<repo-name>/,
+    // so the homepage isn't just "/". Work out the right address.
+    (function () {
+      var link = document.getElementById("home-link");
+      if (location.hostname.endsWith("github.io")) {
+        var repo = location.pathname.split("/")[1];
+        if (repo) link.href = "/" + repo + "/";
+      }
+    })();
+  </script>
+</body>
+</html>
